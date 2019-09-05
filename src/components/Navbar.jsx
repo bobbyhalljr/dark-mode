@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-
+import React from 'react';
 import { useDarkMode } from '../hooks/useDarkMode';
 import { useLocalStorage } from '../hooks/useLocalStorage';
 
@@ -10,8 +9,9 @@ const Navbar = () => {
     setDarkMode(!darkMode);
   };
   return (
+    <>
     <nav className="navbar">
-      <h1>Crypto Tracker</h1>
+      <h1>Crypto Tracker</h1>      
       <div className="dark-mode__toggle">
         <div
           onClick={toggleMode}
@@ -19,6 +19,7 @@ const Navbar = () => {
         />
       </div>
     </nav>
+  </>
   );
 };
 

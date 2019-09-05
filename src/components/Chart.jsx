@@ -30,15 +30,11 @@ const Chart = ({ sparklineData }) => {
     .filter(data => data);
 
   return (
-    <ComposedChart width={500} height={300} data={formattedData}>
-      <Area type="linear" dataKey="value" fill='#8884d8' stroke="#8884e2" />
-      <Line type="linear" dataKey="value" stroke="#8884d8" />
-      <CartesianGrid stroke="#f1f1f1" strokeDasharray="0 0" />
-      <XAxis dataKey="date" interval={5} />
-      <YAxis />
-      <Legend />
-      <Tooltip />
-    </ComposedChart>
+    <div className='chart-container'>
+      <LineChart width={100} height={10} data={formattedData}>
+        <Line type="monotone" dataKey="value" stroke="#8884d8" strokeWidth={5} />
+      </LineChart>
+    </div>
   );
 };
 
