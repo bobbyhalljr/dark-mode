@@ -3,10 +3,13 @@ import moment from "moment";
 import {
   LineChart,
   Line,
+  Area,
   CartesianGrid,
+  ComposedChart,
   XAxis,
   YAxis,
-  Tooltip
+  Tooltip,
+  Legend
 } from "recharts";
 
 const Chart = ({ sparklineData }) => {
@@ -27,13 +30,11 @@ const Chart = ({ sparklineData }) => {
     .filter(data => data);
 
   return (
-    <LineChart width={1100} height={300} data={formattedData}>
-      <Line type="monotone" dataKey="value" stroke="#8884d8" />
-      <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
-      <XAxis dataKey="date" interval={3} />
-      <YAxis />
-      <Tooltip />
-    </LineChart>
+    <div className='chart-container'>
+      <LineChart width={100} height={10} data={formattedData}>
+        <Line type="monotone" dataKey="value" stroke="#8884d8" strokeWidth={5} />
+      </LineChart>
+    </div>
   );
 };
 

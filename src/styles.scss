@@ -107,6 +107,7 @@ section {
 }
 body {
   line-height: 1;
+  background: #f1f1f1;
 }
 ol,
 ul {
@@ -168,6 +169,7 @@ img {
 }
 
 .navbar {
+  background: #fff;
   align-items: center;
   border-bottom: 1px solid rgb(221, 221, 221);
   display: flex;
@@ -181,26 +183,40 @@ img {
 }
 
 .dark-mode__toggle {
-  background: papayawhip;
+  background: #f1f1f1;
   border-radius: 50px;
-  border: 1px solid black;
-  height: 20px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12),
+   0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  height: 15px;
   position: relative;
-  width: 40px;
+  width: 35px;
+  display: flex;
+  align-items: center;
 }
 
 .toggle {
-  background: #f68819;
+  background: dodgerBlue;
   border-radius: 50px;
-  height: 18px;
+  height: 20px;
   left: 0;
   position: absolute;
-  transition: 0.2s;
+  transition: 0.4s;
   width: 20px;
 }
 
 .toggled {
   left: 18px;
+  background: #4f86f7;
+}
+
+// .charts-container {
+//   width: 100%;
+// }
+
+.chart__container {
+  padding: 10px;
+  background: #fff;
 }
 
 .charts {
@@ -211,10 +227,13 @@ img {
 .chart__container {
   align-items: center;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   margin: 50px 0 0;
   width: 100%;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12),
+  0 1px 2px rgba(0,0,0,0.24);
+  border-radius: 10px;
 }
 
 .chart-header {
@@ -229,17 +248,30 @@ img {
 .coin__title {
   display: block;
   margin-left: 8px;
-    min-width: 160px;
-text-align: left;
+  min-width: 160px;
+  text-align: left;
 }
 
 .coin__symbol {
   display: block;
   margin-bottom: 10px;
+  margin-right: 30px;
 }
 
 .coin__logo {
   width: 50px;
+}
+
+.coin__current-price {
+  padding: 0 15px;
+}
+
+.coin__price-negitive {
+  color: red;
+}
+
+.coin__price-postive {
+  color: green;
 }
 
 .dark-mode {
@@ -249,5 +281,11 @@ text-align: left;
   .navbar {
     background-color: #1F2022;
     border: none;
+    width: 100%;
+  }
+
+  .chart__container {
+    background: #1F2022;
+    color: #fff;
   }
 }
