@@ -107,6 +107,7 @@ section {
 }
 body {
   line-height: 1;
+  background: #f1f1f1;
 }
 ol,
 ul {
@@ -164,10 +165,11 @@ img {
 .App {
   font-family: sans-serif;
   text-align: center;
-  width: 80%;
+  width: 100%;
 }
 
 .navbar {
+  background: #fff;
   align-items: center;
   border-bottom: 1px solid rgb(221, 221, 221);
   display: flex;
@@ -214,6 +216,7 @@ img {
 
 .chart__container {
   padding: 10px;
+  background: #fff;
 }
 
 .charts {
@@ -267,7 +270,7 @@ img {
   color: red;
 }
 
-.coin__price-negitive {
+.coin__price-postive {
   color: green;
 }
 
@@ -279,5 +282,10 @@ img {
     background-color: #1F2022;
     border: none;
     width: 100%;
+  }
+
+  .chart__container {
+    background: #1F2022;
+    color: #fff;
   }
 }

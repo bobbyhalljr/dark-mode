@@ -12,10 +12,11 @@ const Charts = ({ coinData }) => {
           <div className="coin__logo">
             <img src={coin.image} width='50' alt={coin.name} />
           </div>
-          <h2 className='coin__current-price'>{coin.current_price}</h2>
-          <h4 id='price' className='coin__price-negitive'>{coin.price_change_percentage_24h}</h4>
+          <h2 className='coin__current-price'>{`$ ${coin.current_price}`}</h2>
+          <h4 id='price' className={coin.price_change_percentage_24h > 0 ? 'coin__price-postive' : 'coin__price-negitive'}>{coin.price_change_percentage_24h}</h4>
           {/* <Chart sparklineData={coin.sparkline_in_7d.price} /> */}
         </div>
+        // coin__price-negitive
       ))}
     </div>
     </div>
