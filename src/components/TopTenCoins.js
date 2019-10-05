@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
-import Chart from "./Chart";
 
-const Charts = ({ coinData }) => {
+const TopTenCoins = ({ coinData }) => {
   return (
     <div className='charts-container'>
       <div className="charts">
@@ -16,11 +15,10 @@ const Charts = ({ coinData }) => {
           <h4 id='price' className={coin.price_change_percentage_24h > 0 ? 'coin__price-postive' : 'coin__price-negitive'}>{coin.price_change_percentage_24h}</h4>
           {/* <Chart sparklineData={coin.sparkline_in_7d.price} /> */}
         </div>
-        // coin__price-negitive
       ))}
     </div>
     </div>
   );
 };
 
-export default Charts;
+export default TopTenCoins;
