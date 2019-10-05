@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import Axios from 'axios';
-
+import { NavLink, Route } from 'react-router-dom';
 import { PageHeader, Tag, Button, Statistic, Descriptions, Row } from 'antd';
 
-const Coins = () => {
+import SingleCoin from '../components/SingleCoin';
+
+const Coins = (props) => {
     const [coins, setCoins] = useState([])
 
     const getCoins = () => {
@@ -19,6 +21,8 @@ const Coins = () => {
         getCoins();
     }, [])
 
+    const { match } = props;
+
     return (
         <div className='coin-container'>
             {coins.map(coin => {
@@ -29,11 +33,6 @@ const Coins = () => {
                         title={coin.name}
                         tags={<Tag color="blue">{`rank ${coin.rank}`}</Tag>}
                         subTitle={coin.symbol}
-                        // extra={[
-                        //     <Button key="1" type="primary">
-                        //     {`view ${coin.name}`}
-                        //     </Button>,
-                        // ]}
                         >
                         <Row type="flex">
                             <Statistic title="Market Cap" value={coin.quotes.USD.market_cap} />
@@ -46,13 +45,19 @@ const Coins = () => {
                             }}
                             />
                             <Statistic title="Price change" prefix="$" value={coin.quotes.USD.percent_from_price_ath} />
-                            <Button className='btn' key="1" type="primary">
-                            {`view ${coin.name}`}
-                            </Button>
+                            <NavLink to={`/coins/${coin.id}`}>
+                                <Button className='btn' key="1" type="primary">
+                                    {/* <NavLink to={`/coins/${coin.id}`}> */}
+                                        {`view ${coin.name}`}
+                                    {/* </NavLink> */}
+                                </Button>
+                            </NavLink>
                         </Row>
                     </PageHeader>
                 )
             })}
+
+            <Route path='/coins/:id' render={props => <SingleCoin {...props} />} />
         </div>
     )
 }
