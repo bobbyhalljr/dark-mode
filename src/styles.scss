@@ -288,6 +288,20 @@ img {
     background: #1F2022;
     color: #fff;
   }
+
+  .links {
+    background: #333;
+
+    .link {
+      background: #1F2022;
+      color: #f1f1f1;
+  
+      &:hover {
+        background: #fff;
+        color: #333;
+      }
+    }
+  }
 }
 
 .links {
