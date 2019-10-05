@@ -6,6 +6,7 @@ import TopTenCoins from "./components/TopTenCoins";
 import Navbar from "./components/Navbar";
 import About from './components/About';
 import Home from './components/Home';
+import Coins from './components/Coins';
 
 const App = () => {
     const [coinData, setCoinData] = useState([]);
@@ -28,8 +29,9 @@ const App = () => {
             {/* <Charts coinData={coinData} /> */}
 
             <Route exact path='/' component={Home} />
-            <Route path='/about' component={About} />
             <Route path='/top10' render={props => <TopTenCoins coinData={coinData} />}/>
+            <Route path='/coins' render={props => <Coins {...props} coinData={coinData} />} />
+            <Route path='/about' component={About} />
         </div>
     );
   };

@@ -289,3 +289,32 @@ img {
     color: #fff;
   }
 }
+
+.links {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  background: #fff;
+  padding: 20px;
+
+  .link {
+    font-size: 18px;
+    font-weight: 700;
+    padding: 10px;
+    color: #333;
+    text-decoration: none;
+    background: #f1f1f1;
+    margin-right: 15px;
+    border-radius: 10px;
+
+    &:hover {
+      background: #333;
+      color: #fff;
+    }
+  }
+}
+
+.is-active {
+  background: #333;
+  color: #fff;
+}
